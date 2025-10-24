@@ -14,7 +14,7 @@ class TestMortgageCalculator(unittest.TestCase):
         """Тест расчета ежемесячного платежа"""
         calc = MortgageCalculator(100000, 5, 10)
         payment = calc.calculate_monthly_payment()
-        self.assertAlmostEqual(payment, 1060.66, places=1)  # Изменил places=1 для большей гибкости
+        self.assertAlmostEqual(payment, 1060.66, places=1)
 
     def test_total_payment_calculation(self):
         """Тест расчета общей суммы выплат"""
