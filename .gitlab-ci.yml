@@ -21,7 +21,7 @@ deploy_to_production:
     - echo "Starting deployment process..."
   script:
     - echo "Copying files to production server..."
-    - echo "Running: scp -r . user@production-server:/opt/mortgage-calculator/"
+    - echo "Running: scp -r . user@production-server:/opt/mortgage-calculator1/"
     - echo "Application deployed successfully to production!"
     - echo "Current version: $(date +%Y%m%d-%H%M%S)"
   only:
