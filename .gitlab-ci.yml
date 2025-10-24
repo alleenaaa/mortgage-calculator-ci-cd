@@ -24,7 +24,3 @@ deploy_to_production:
     - echo "Running: scp -r . user@production-server:/opt/mortgage-calculator1/"
     - echo "Application deployed successfully to production!"
     - echo "Current version: $(date +%Y%m%d-%H%M%S)"
-  only:
-    - main
-  tags:
-    - shared
