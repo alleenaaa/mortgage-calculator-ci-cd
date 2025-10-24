@@ -1,0 +1,30 @@
+stages:
+  - test
+  - deploy
+
+#unit тесты
+unit_tests:
+  stage: test
+  before_script:
+    - python --version
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+  script:
+    - python -m pytest tests/ -v
+  tags:
+    - shared
+
+#деплой на продуктовый сервер (симуляция)
+deploy_to_production:
+  stage: deploy
+  before_script:
+    - echo "Starting deployment process..."
+  script:
+    - echo "Copying files to production server..."
+    - echo "Running: scp -r . user@production-server:/opt/mortgage-calculator/"
+    - echo "Application deployed successfully to production!"
+    - echo "Current version: $(date +%Y%m%d-%H%M%S)"
+  only:
+    - main
+  tags:
+    - shared
