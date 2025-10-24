@@ -49,7 +49,7 @@ class TestMortgageCalculator(unittest.TestCase):
         self.assertEqual(len(schedule), 120)  # 10 лет * 12 месяцев
 
     def test_large_loan_calculation(self):
-        """Тест расчета для крупного кредита"""
+        """Тест расчета для крупного кредитa"""
         calc = MortgageCalculator(1000000, 7.5, 30)
         payment = calc.calculate_monthly_payment()
         self.assertTrue(6900 <= payment <= 7100)
